@@ -1,0 +1,27 @@
+<?php $slider = get_field('header_slider','option'); 
+if($slider != ''):?>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<?php foreach ($slider as $key => $item) {
+			?>
+			<div class="swiper-slide">
+<!-- 				<a href="<?= $item['url'];?>"> -->
+					<img src="<?= kama_thumb_src('w=1140 &h=270', $item['banner']); ?>" alt="" class="slider-img">
+<!-- 				</a> -->
+			</div>
+			<?php 
+			} ?>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+<?php endif; ?>
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+    });
+  </script>
